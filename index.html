@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>
+<body>
+
+<!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light box-shadow-1 mb-2">
+    <a class="navbar-brand" href="#">
+        <img src="photos/icerik-logo.png"
+             class="d-inline-block align-top navbar-logo" alt="icerik.com logo">
+    </a>
+
+    <button class="btn btn-success" id="create-content" type="button"><i class="fas fa-pen mr-1"></i>İçerik Siparişi Oluştur
+    </button>
+
+    <button class="navbar-toggler" id="hamburger" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link"><i class="fas fa-book mr-1"></i>Projelerim</a></li>
+            <li class="nav-item"><a class="nav-link"><i class="fas fa-question mr-1"></i>Yardım</a></li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link">Yüklü Bakiyeniz: ₺6433.88</a></li>
+            <li class="nav-item"><a class="nav-link"><i class="fas fa-bell"></i><span class="nav-item-text pl-1">Bildirimler</span></a></li>
+            <li class="nav-item"><a class="nav-link"><i class="fas fa-user"></i><span class="nav-item-text pl-1">Profil</span></a></li>
+        </ul>
+    </div>
+
+</nav>
+
+<!-- Container -->
+<div class="container">
+
+    <div class="d-flex flex-column align-items-center info-container">
+        <i class="fas fa-info-circle text-primary"></i>
+        <p id="status_str"></p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-9">
+            <ul class="page-breadcrumb d-flex flex-md-column flex-lg-row">
+                <li><a href="#">Projelerim</a></li>
+                <li><a href="#">Sosyal Medya Blog Yazıları</a></li>
+                <li><a href="#" class="content_title"></a></li>
+            </ul>
+        </div>
+        <div class="col-md-3 d-flex flex-column align-items-center">
+            <fieldset class="rating" id="rating-stars">
+                <input type="radio" id="star5-1" name="rating" value="5"/>
+                <label class="full" for="star5-1"
+                       title="Awesome - 5 stars"></label>
+                <input type="radio" id="star4half-1" name="rating" value="4.5"/><label class="half" for="star4half-1"
+                                                                                       title="Pretty good - 4.5 stars"></label>
+                <input type="radio" id="star4-1" name="rating" value="4"/><label class="full" for="star4-1"
+                                                                                 title="Pretty good - 4 stars"></label>
+                <input type="radio" id="star3half-1" name="rating" value="3.5"/><label class="half" for="star3half-1"
+                                                                                       title="Meh - 3.5 stars"></label>
+                <input type="radio" id="star3-1" name="rating" value="3"/><label class="full" for="star3-1"
+                                                                                 title="Meh - 3 stars"></label>
+                <input type="radio" id="star2half-1" name="rating" value="2.5"/><label class="half" for="star2half-1"
+                                                                                       title="Kinda bad - 2.5 stars"></label>
+                <input type="radio" id="star2-1" name="rating" value="2"/><label class="full" for="star2-1"
+                                                                                 title="Kinda bad - 2 stars"></label>
+                <input type="radio" id="star1half-1" name="rating" value="1.5"/><label class="half" for="star1half-1"
+                                                                                       title="Meh - 1.5 stars"></label>
+                <input type="radio" id="star1-1" name="rating" value="1"/><label class="full" for="star1-1"
+                                                                                 title="Sucks big time - 1 star"></label>
+                <input type="radio" id="starhalf-1" name="rating" value="0.5"/><label class="half" for="starhalf-1"
+                                                                                      title="Sucks big time - 0.5 stars"></label>
+            </fieldset>
+            <label for="rating-stars">İçeriğe Verilen Puan</label>
+        </div>
+    </div>
+
+    <div class="card box-shadow-2 mb-4">
+        <div class="box-shadow-1 d-flex flex-row justify-content-between align-items-center py-3 px-5 mb-3">
+            <h1 class="content_title"></h1>
+            <span class="deadline_content">Teslim zamanı: 04.07.2018 / 18:11</span>
+        </div>
+        <ul class="list-group list-group-flush list-horizontal-scroll">
+            <li class="list-group-item border-top-0">
+                <ul class="d-flex flex-row content-list-titles">
+                    <li>İçerik Türü</li>
+                    <li>İlgi Alanı</li>
+                    <li>Yazar Seviyesi</li>
+                    <li>İçerik Dili</li>
+                    <li>Görsel Kullanımı</li>
+                    <li>Kelime Aralığı</li>
+                    <li>Fiyat</li>
+                </ul>
+            </li>
+            <li class="list-group-item">
+                <ul class="d-flex flex-row content-list-items">
+                    <li id="product_title"></li>
+                    <li id="interest_title"></li>
+                    <li id="userlevel_title"></li>
+                    <li id="language_title"></li>
+                    <li id="visual"></li>
+                    <li id="limit_word"></li>
+                    <li id="price_publisher"></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <!-- Content -->
+        <div class="col-sm-8">
+            <div class="card box-shadow-2 mb-4">
+                <div class="card-body">
+                    <div class="border-bottom pb-3">
+                        <h5 class="card-title">İçerik Açıklaması</h5>
+                        <p class="card-text" id="content-description"></p>
+                    </div>
+                    <div class="pt-3">
+                        <h5 class="card-title">Yazarın Ürettiği İçerik</h5>
+                        <p class="card-text" id="content"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card box-shadow-2 mb-4">
+                <div class="card-body">
+                    <p class="card-title">Kelime Sayısı: <span>0</span></p>
+                    <p class="card-title">Anahtar Kelime Kullanımı:</p>
+                    <div class="d-flex flex-column align-items-start" id="keyword">
+                    </div>
+                </div>
+            </div>
+            <div class="btn-container d-flex flex-row">
+                <button class="btn btn-success ml-3" id="approve-btn" data-toggle="modal" data-target="#ratingModal">
+                    Onayla
+                </button>
+                <button class="btn btn-warning ml-3" id="revision-btn" data-toggle="modal" data-target="#revisionModal">
+                    Revize
+                    Ver
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- Container End -->
+
+
+<!-- Rating Modal -->
+<div class="modal fade" id="ratingModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">İçeriğe Oy Ver</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <fieldset class="rating" id="rating">
+                    <input type="radio" name="rating" id="star5" value="5"/><label class="full" for="star5"
+                                                                                   title="Awesome - 5 stars"></label>
+                    <input type="radio" name="rating" id="star4half" value="4.5"/><label class="half" for="star4half"
+                                                                                         title="Pretty good - 4.5 stars"></label>
+                    <input type="radio" name="rating" id="star4" value="4"/><label class="full" for="star4"
+                                                                                   title="Pretty good - 4 stars"></label>
+                    <input type="radio" name="rating" id="star3half" value="3.5"/><label class="half" for="star3half"
+                                                                                         title="Meh - 3.5 stars"></label>
+                    <input type="radio" name="rating" id="star3" value="3"/><label class="full" for="star3"
+                                                                                   title="Meh - 3 stars"></label>
+                    <input type="radio" name="rating" id="star2half" value="2.5"/><label class="half" for="star2half"
+                                                                                         title="Kinda bad - 2.5 stars"></label>
+                    <input type="radio" name="rating" id="star2" value="2"/><label class="full" for="star2"
+                                                                                   title="Kinda bad - 2 stars"></label>
+                    <input type="radio" name="rating" id="star1half" value="1.5"/><label class="half" for="star1half"
+                                                                                         title="Meh - 1.5 stars"></label>
+                    <input type="radio" name="rating" id="star1" value="1"/><label class="full" for="star1"
+                                                                                   title="Sucks big time - 1 star"></label>
+                    <input type="radio" name="rating" id="starhalf" value="0.5"/><label class="half" for="starhalf"
+                                                                                        title="Sucks big time - 0.5 stars"></label>
+                </fieldset>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="rate-cancel-btn" data-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" id="rate-save-btn" onclick="rateContent()">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Revision Modal -->
+<div class="modal fade" id="revisionModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Revize Ver</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group" id="revision-area">
+                    <label for="message">Yorumunuz:</label>
+                    <textarea class="form-control" rows="5" name="message" id="message"
+                              onfocus="hideErrorMsg()"></textarea>
+                    <span id="revision-err-msg">Yorumunuzu yazınız</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="msg-cancel-btn" data-dismiss="modal">İptal</button>
+                <button type="button" class="btn btn-primary" id="msg-save-btn" onclick="reviseContent()">Kaydet
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content Error Modal -->
+<div class="modal fade" id="#contentErrModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <p>İçerik yüklenirken hata oluştu. Lütfen tekrar deneyiniz.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Message Modal -->
+<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="message-text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jQuery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
